@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document
 public class Supplier {
+
     String name;
     String contactName;
     String contactTitle;

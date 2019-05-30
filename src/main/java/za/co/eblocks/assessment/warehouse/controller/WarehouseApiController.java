@@ -8,41 +8,35 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.CoreSubscriber;
 import reactor.core.publisher.Flux;
+
+import za.co.eblocks.assessment.warehouse.model.*;
 
 @RestController
 public class WarehouseApiController {
-    private static final Logger logger = LoggerFactory.getLogger(ReactiveController.class);
+    private static final Logger logger = LoggerFactory.getLogger(WarehouseApiController.class);
 
-    @GetMapping(path = "/api/product", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Produc chatEvent(@RequestParam final String uuid){
-        logger.info("Fluxing " + uuid);
+    @GetMapping(path = "/api/suppliers", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Supplier> getAllSuppliers(){
+        logger.info("Retrieving suppliers");
 
-        return sessionRepository.findById(uuid);
-    }
-}
-
-
-
-public class ReactiveController {
-
-
-
-
-    @GetMapping(path = "/session", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Session> chatEvent(@RequestParam final String uuid){
-        logger.info("Fluxing " + uuid);
-
-        return sessionRepository.findById(uuid);
+        return null;
     }
 
-    @GetMapping(path = "/sow")
-    public void addMesssage(
-            @RequestParam final String id,
-            @RequestParam final int index
+    @GetMapping(path = "/api/categories", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Category> getAllCategories(){
+        logger.info("Retrieving categories");
+
+        return null;
+    }
+
+    @GetMapping(path = "/api/products", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Product> findProductsBySupplierAndCategory(
+            @RequestParam final Category category,
+            @RequestParam final Product product
     ){
-        logger.info("Creating new message");
-        Session session = sessionRepository.findOrCreateById(id);
-        session.getMancala().sow(index);
+
+        return null;
     }
 }

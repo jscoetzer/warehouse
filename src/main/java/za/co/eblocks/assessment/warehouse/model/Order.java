@@ -1,6 +1,5 @@
 package za.co.eblocks.assessment.warehouse.model;
 
-import jdk.jfr.DataAmount;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
