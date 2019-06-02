@@ -1,0 +1,16 @@
+[
+  {"name": "Stinger 0M 9.5mm", "category": { "name": "Ropes"}, "supplier": { "name": "Beal"}},
+  {"name": "Antidote 90M 10mm Static", "category": { "name": "Ropes"}, "supplier": { "name": "Beal"}},
+  {"name": "Joker 70M 9.5mm", "category": { "name": "Ropes"}, "supplier": { "name": "Beal"}},
+  {"name": "Arial 60M 9.5mm", "category": { "name": "Ropes"}, "supplier": { "name": "Petzl"}},
+  {"name": "Arial 60M 9.5mm Dry-Treated", "category": { "name": "Ropes"}, "supplier": { "name": "Petzl"}},
+  {"name": "Galaxy 60M 10mm", "category": { "name": "Ropes"}, "supplier": { "name": "Mammut"}},
+  {"name": "Galaxy 70M 10mm", "category": { "name": "Ropes"}, "supplier": { "name": "Mammut"}},
+  {"name": "Galaxy 70M 10mm", "category": { "name": "Ropes"}, "supplier": { "name": "Mammut"}},
+  {"name": "Aero Team IV", "category": { "name": "Harnesses"}, "supplier": { "name": "Beal"}},
+  {"name": "Ellipse XT", "category": { "name": "Harnesses"}, "supplier": { "name": "Beal"}},
+  {"name": "Corax", "category": { "name": "Harnesses"}, "supplier": { "name": "Petzl"}},
+  {"name": "Sitta", "category": { "name": "Harnesses"}, "supplier": { "name": "Petzl"}},
+  {"name": "Viper 2", "category": { "name": "Harnesses"}, "supplier": { "name": "DMM"}},
+  {"name": "Venture", "category": { "name": "Harnesses"}, "supplier": { "name": "DMM"}}
+]

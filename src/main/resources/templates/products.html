@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link data-th-href="@{/css/main.css}" rel="stylesheet">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Products</h1>
+            <p>Simple product filtering page built with Spring Boot and MongoDB.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="selectCategories">Suppliers</label>
+                    </div>
+                    <select class="custom-select" id="selectCategories">
+                        <option value="" selected>All</option>
+                        <th:block th:each="supplier : ${suppliers}">
+                            <option value="1"><p th:text="${supplier.name}"></p></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="selectSuppliers">Categories</label>
+                    </div>
+                    <select class="custom-select" id="selectSuppliers">
+                        <option value="" selected>All</option>
+                        <th:block th:each="category : ${categories}">
+                            <option value="1"><p th:text="${category.name}"></p></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="productsDiv">
+        <div class="row" >
+            <div class="col-sm-4">
+                <span >Product</span>
+            </div>
+            <div class="col-sm-4">
+                <span >Supplier</span>
+            </div>
+            <div class="col-sm-4">
+                <span >Category</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script data-th-src="@{/js/products.js}"></script>
+
+</body>
+
+</html>
