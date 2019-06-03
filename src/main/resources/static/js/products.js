@@ -39,9 +39,8 @@ function refreshProducts() {
     if (supplier !== ""){
         url += "supplier=" + supplier;
     }
-    console.log(url);
 
-    $(".product").remove();
+    $("#tableBody").empty();
 
     $.ajax({
         url: url,
@@ -75,12 +74,12 @@ function addProduct(product){
     var supplier = supplierSelect.val();
 
     if ((supplier === product.supplier.name || supplier === "") && (categories === product.category.name || categories === "")){
-        var divTemplate = "<div class=\"row product\">" +
-            "<div class=\"col-sm-4\"> <span >" + product.name + "</span> </div>" +
-            "<div class=\"col-sm-4\"> <span >" + product.supplier.name + "</span> </div>" +
-            "<div class=\"col-sm-4\"> <span >" + product.category.name + "</span> </div>" +
-            "</div>";
-        productsDiv.append(divTemplate);
+
+        $("#tableBody").append("<tr>\n" +
+            "<td>" + product.name + "</td>\n" +
+            "<td>" + product.supplier.name + "</td>\n" +
+            "<td>" + product.category.name + "</td>\n" +
+            "</tr>")
     }
 }
 
