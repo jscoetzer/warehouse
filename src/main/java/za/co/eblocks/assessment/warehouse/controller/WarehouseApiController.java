@@ -40,21 +40,21 @@ public class WarehouseApiController {
 
     @GetMapping(path="/products")
     public @ResponseBody Flux<Product> getProductsByCategoryAndSupplier(){
-        log.info("no params");
+        log.info("Finding all products");
         return warehouseService.findAll();
     }
 
     @GetMapping(path="/products", params = {"category"})
     public @ResponseBody Flux<Product> getProductsByCategoryAndSupplier(
             @RequestParam final String category){
-        log.info("category");
+        log.info("Finding products for category " + category);
         return warehouseService.findAllByCategoryName(category);
     }
 
     @GetMapping(path="/products", params = {"supplier"})
     public @ResponseBody Flux<Product> getProductsBySupplier(
             @RequestParam final String supplier){
-        log.info("supp");
+        log.info("Finding products for supplier " + supplier);
         return warehouseService.findAllBySupplierName(supplier);
     }
 
@@ -62,7 +62,7 @@ public class WarehouseApiController {
     public @ResponseBody Flux<Product> getProductsByCategoryAndSupplier(
             @RequestParam final String category,
             @RequestParam final String supplier){
-        log.info("cat supp");
+        log.info("Finding products for category " + category + " and supplier " + supplier);
         return warehouseService.findAllByCategoryNameAndSupplierName(category, supplier);
     }
 
@@ -72,8 +72,7 @@ public class WarehouseApiController {
 
         ModelAndView model = new ModelAndView();
         model.addObject("products", warehouseService.findAll());
-        model.setViewName("products");
+        model.setViewName("index");
         return model;
     }
-/**/
 }
