@@ -26,48 +26,13 @@ import java.util.UUID;
 @Slf4j
 public class WarehouseApiController {
 
-
     private WarehouseService warehouseService;
 
     WarehouseApiController(WarehouseService warehouseService){
         this.warehouseService = warehouseService;
     }
 
-    /*
-    @GetMapping(path = "/api/suppliers")
-    public Flux<Supplier> getAllSuppliers(){
-        logger.info("Retrieving suppliers");
-        return null;
-    }
-
-    @GetMapping(path = "/api/categories")
-    public Flux<Product> getAllCategories(){
-        logger.info("Retrieving categories");
-        return warehouseReactiveRepository.findAll();
-    }
-
-    @GetMapping(path = "/api/products")
-    public @ResponseBody Flux<Product> getAllProducts(){
-        log.info("Retrieving findAll products");
-        return warehouseReactiveRepository.findAll();
-    }
-
-
-
-    @PostMapping(path = "api/products")
-    public @ResponseBody
-    Flux<Product> addProducts(@RequestBody List<Product> products){
-        return warehouseReactiveRepository.saveAll(products);
-    }
-
-    @GetMapping("/")
-    public String index(Model model) {
-        return "index";
-    }
-
-    */
-
-    @PostMapping(path = "api/product")
+    @PostMapping(path = "/product")
     public @ResponseBody
     Mono<Product> addProduct(@RequestBody Product product){
         return warehouseService.create(product);
@@ -107,8 +72,6 @@ public class WarehouseApiController {
 
         ModelAndView model = new ModelAndView();
         model.addObject("products", warehouseService.findAll());
-        model.addObject("categories", warehouseService.findAllCategories());
-        model.addObject("suppliers", warehouseService.findAllSuppliers());
         model.setViewName("products");
         return model;
     }

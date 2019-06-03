@@ -28,9 +28,6 @@
                     </div>
                     <select class="custom-select" id="selectCategories">
                         <option value="" selected>All</option>
-                        <th:block th:each="supplier : ${suppliers}">
-                            <option value="1"><p th:text="${supplier.name}"></p></option>
-                        </th:block>
                     </select>
                 </div>
             </div>
@@ -41,9 +38,6 @@
                     </div>
                     <select class="custom-select" id="selectSuppliers">
                         <option value="" selected>All</option>
-                        <th:block th:each="category : ${categories}">
-                            <option value="1"><p th:text="${category.name}"></p></option>
-                        </th:block>
                     </select>
                 </div>
             </div>
@@ -52,13 +46,13 @@
     <div class="container" id="productsDiv">
         <div class="row">
             <div class="col-sm-4">
-                <span >Product</span>
+                <span ><b>Product</b></span>
             </div>
             <div class="col-sm-4">
-                <span >Supplier</span>
+                <span ><b>Supplier</b></span>
             </div>
             <div class="col-sm-4">
-                <span >Category</span>
+                <span ><b>Category</b></span>
             </div>
         </div>
 

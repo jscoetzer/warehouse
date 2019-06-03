@@ -21,7 +21,7 @@ public class LoadDataConfiguration {
     ApplicationRunner init(WarehouseReactiveRepository repository) {
 
         List<Product> data = new ArrayList<>();
-        /*
+
         data.add(new Product("Stinger 0M 9.5mm", new Category("Ropes"), new Supplier("Beal")));
         data.add(new Product("Antidote 90M 10mm Static", new Category("Ropes"), new Supplier("Beal")));
         data.add(new Product("Joker 70M 9.5mm", new Category("Ropes"), new Supplier("Beal")));
@@ -37,7 +37,7 @@ public class LoadDataConfiguration {
         data.add(new Product("Sitta", new Category("Harnesses"), new Supplier("Petzl")));
         data.add(new Product("Viper 2", new Category("Harnesses"), new Supplier("DMM")));
         data.add(new Product("Venture", new Category("Harnesses"), new Supplier("DMM")));
-        */
+
 
         return args -> {
             data.forEach( d -> {
